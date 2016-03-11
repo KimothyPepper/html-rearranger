@@ -1,10 +1,20 @@
-var $h1 = $('h1');
-var $ul = $('ul');
-var $li = $('li');
-var $h2 = $('h2');
+var $h1above = $('<h1>');
+var $h1below = $('<h1>');
+var $ulabove = $('<ul>');
+var $ulbelow = $('<ul>');
 
-$h1.html('Below ground veggies');
-$h2.html('Above ground veggies');
+$h1below.html('Below ground veggies');
+$('body').append ($h1below)
+$('body').append ($ulbelow)
 
-$('h1').append('<h1>Below ground veggies</h1>');
-$('h2').append('<h2>Above ground veggies</h2>');
+$h1above.html('Above ground veggies');
+$('body').append ($h1above)
+$('body').append ($ulabove)
+
+$('ul li').each (function() {
+  if ($(this).hasClass('above')){
+  $ulabove.append($(this));
+} else{
+  $ulbelow.append($(this));
+}
+});
